@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Placeholder image">
+  <!-- Replace this placeholder with an open graph image -->
+  <defs>
+    <linearGradient id="og" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f1f1f"/>
+      <stop offset="100%" stop-color="#8a5a2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#og)"/>
+  <text x="50%" y="50%" fill="#f7f2ea" font-family="Arial, sans-serif" font-size="48" text-anchor="middle">The Royal Hotel Gympie</text>
+</svg>
