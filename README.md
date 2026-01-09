@@ -17,3 +17,15 @@
 2. Configure the bucket for static website hosting or set it as the CloudFront origin.
 3. Set `index.html` as the default root object in CloudFront.
 4. After updates, invalidate the CloudFront cache to refresh content.
+
+## GitHub Actions deployment
+This repo includes a workflow at `.github/workflows/deploy.yml` that deploys on pushes to `main`.
+
+Required GitHub Secrets:
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+- `AWS_REGION` (example: `ap-southeast-2`)
+- `AWS_S3_BUCKET`
+
+Optional GitHub Secrets:
+- `AWS_CLOUDFRONT_DISTRIBUTION_ID` (enables cache invalidation)
