@@ -64,139 +64,190 @@
   </header>
 
   <main id="main">
-    <section class="hero" style="--hero-image: url('assets/img/hero-placeholder.svg');">
-      <!-- Replace hero image in the inline style with a real venue photo -->
-      <div class="container hero-content">
-        <span class="badge">Gympie, Queensland, Australia</span>
-        <h1 class="animate">Your local in the heart of Gympie</h1>
-        <p class="animate delay-1">Relaxed dining, a welcoming bar, flexible function spaces, and comfortable accommodation, all under one roof.</p>
-        <div class="hero-actions animate delay-2">
-          <a class="btn btn-primary" href="https://www.booking.com/PLACEHOLDER" target="_blank" rel="noopener noreferrer">Book Accommodation</a>
-          <a class="btn btn-outline" href="#highlights">Explore the Venue</a>
+    <section class="hero hero-home" style="background-image: linear-gradient(115deg, rgba(6, 14, 12, 0.92), rgba(6, 14, 12, 0.6) 56%, rgba(6, 14, 12, 0.28)), linear-gradient(180deg, rgba(6, 14, 12, 0.15), rgba(6, 14, 12, 0.76)), url('assets/img/hero-placeholder.svg');">
+      <div class="container hero-shell">
+        <div class="hero-content">
+          <span class="badge animate">Gympie's heritage local</span>
+          <h1 class="animate delay-1">Stay the night. Settle in for dinner. Celebrate properly.</h1>
+          <p class="hero-lead animate delay-2">The Royal Hotel Gympie brings together a relaxed bistro, classic bar, flexible event spaces, and easy overnight stays in one warm, central address.</p>
+          <div class="hero-actions animate delay-3">
+            <a class="btn btn-primary" href="https://www.booking.com/PLACEHOLDER" target="_blank" rel="noopener noreferrer">Book Accommodation</a>
+            <a class="btn btn-outline btn-contrast" href="#highlights">Explore the Venue</a>
+          </div>
+          <div class="hero-meta animate delay-3" style="display: grid; gap: 0.9rem; margin-top: 1.5rem;">
+            <div class="hero-meta-item" style="padding: 1rem 1.1rem; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.12); background: rgba(255, 249, 241, 0.1); backdrop-filter: blur(12px);">
+              <span class="meta-kicker">Open daily</span>
+              <strong>10:00am to late</strong>
+            </div>
+            <div class="hero-meta-item" style="padding: 1rem 1.1rem; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.12); background: rgba(255, 249, 241, 0.1); backdrop-filter: blur(12px);">
+              <span class="meta-kicker">Made for</span>
+              <strong>Dining, drinks, events, and stays</strong>
+            </div>
+            <div class="hero-meta-item" style="padding: 1rem 1.1rem; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.12); background: rgba(255, 249, 241, 0.1); backdrop-filter: blur(12px);">
+              <span class="meta-kicker">Location</span>
+              <strong>Central Gympie, Queensland</strong>
+            </div>
+          </div>
         </div>
+
+        <aside class="hero-panel animate delay-2" style="display: grid; gap: 1rem; padding: 1.35rem; background: linear-gradient(180deg, rgba(14, 32, 26, 0.62), rgba(14, 32, 26, 0.36)); border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 28px; box-shadow: 0 24px 50px rgba(4, 8, 7, 0.16); backdrop-filter: blur(18px);">
+          <span class="badge">Inside the venue</span>
+          <h2>One address, four reasons to keep coming back.</h2>
+          <p>Whether you are planning a long lunch, catching up over a round, hosting something worth dressing up for, or staying the night, the Royal is designed to feel easy and well looked after.</p>
+          <ul class="hero-list">
+            <li>Relaxed bistro dining with familiar pub favourites.</li>
+            <li>A welcoming bar for locals, visitors, and weekend drop-ins.</li>
+            <li>Flexible spaces for birthdays, work functions, and celebrations.</li>
+            <li>Comfortable accommodation with quick online booking.</li>
+          </ul>
+          <a class="btn btn-outline btn-contrast" href="functions/index.html">Plan a Function</a>
+        </aside>
       </div>
     </section>
 
     <section class="section" id="highlights">
       <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">What the Royal does best</span>
+          <h2>A hotel made for long lunches, casual nights, and easy stays.</h2>
+          <p>The site still uses placeholder content, but the shape of the venue offer is clear: this is a hospitality destination built around relaxed service, flexible spaces, and repeat local traffic.</p>
+        </div>
+
         <div class="grid grid-3">
-          <a class="card animate" href="eat-drink/index.html">
-            <div class="card-icon">ED</div>
+          <a class="card feature-card animate" href="eat-drink/index.html">
+            <div class="feature-index">01</div>
             <h3>Eat &amp; Drink</h3>
-            <p>A relaxed place to grab a meal and catch up with friends.</p>
+            <p>A relaxed place to grab a meal, ease into the evening, and catch up without the room feeling overworked.</p>
           </a>
-          <a class="card animate delay-1" href="eat-drink/index.html">
-            <div class="card-icon">BR</div>
-            <h3>Bar</h3>
-            <p>A welcoming bar for locals and visitors with classic pours.</p>
+          <a class="card feature-card animate delay-1" href="eat-drink/index.html">
+            <div class="feature-index">02</div>
+            <h3>Classic Bar Energy</h3>
+            <p>A welcoming bar for locals and visitors with familiar pours, easy conversation, and room to settle in.</p>
           </a>
-          <a class="card animate delay-2" href="functions/index.html">
-            <div class="card-icon">FN</div>
-            <h3>Functions</h3>
-            <p>Spaces available for birthdays, work gatherings, and celebrations.</p>
+          <a class="card feature-card animate delay-2" href="functions/index.html">
+            <div class="feature-index">03</div>
+            <h3>Functions &amp; Celebrations</h3>
+            <p>Spaces available for birthdays, work gatherings, and milestone nights that need a little structure.</p>
           </a>
-          <a class="card animate delay-3" href="whats-on/index.html">
-            <div class="card-icon">WO</div>
+          <a class="card feature-card animate delay-3" href="whats-on/index.html">
+            <div class="feature-index">04</div>
             <h3>What&#8217;s On</h3>
-            <p>Local events, casual entertainment, and community moments.</p>
+            <p>Local events, casual entertainment, and community-led reasons to come back through the week.</p>
           </a>
-          <a class="card animate" href="accommodation/index.html">
-            <div class="card-icon">AC</div>
+          <a class="card feature-card animate" href="accommodation/index.html">
+            <div class="feature-index">05</div>
             <h3>Accommodation</h3>
-            <p>Comfortable stays with easy booking via Booking.com.</p>
+            <p>Comfortable stays with straightforward booking via Booking.com and quick access to the rest of the venue.</p>
           </a>
         </div>
       </div>
     </section>
 
     <section class="section compact">
-      <div class="container grid grid-2">
-        <div>
-          <span class="badge">Eat &amp; Drink</span>
-          <h2>A classic bistro experience</h2>
-          <p>Enjoy fresh, familiar flavours in a comfortable setting. Our bistro keeps things relaxed and easy for solo diners, couples, and groups.</p>
-          <a class="btn btn-outline" href="eat-drink/index.html">View Eat &amp; Drink</a>
+      <div class="container stats-grid">
+        <div class="stat-card">
+          <strong>Dining that feels easy</strong>
+          <p>Built for solo meals, group tables, and those not-in-a-rush pub nights.</p>
+        </div>
+        <div class="stat-card">
+          <strong>Events without the fuss</strong>
+          <p>Flexible spaces for private functions, community nights, and business gatherings.</p>
+        </div>
+        <div class="stat-card">
+          <strong>Stay after the night winds down</strong>
+          <p>Simple accommodation that keeps the venue offer under one roof.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container grid grid-2 split-section">
+        <div class="content-stack">
+          <span class="eyebrow">Bistro &amp; bar</span>
+          <h2>A warmer, more polished take on the classic local.</h2>
+          <p>Enjoy fresh, familiar flavours in a comfortable setting. The bistro keeps things relaxed and easy for couples, families, solo diners, and larger tables without losing the feeling of a proper pub.</p>
+          <div class="pill-list">
+            <span>Bistro classics</span>
+            <span>Casual catch-ups</span>
+            <span>After-work drinks</span>
+          </div>
+          <a class="btn btn-outline" href="eat-drink/index.html">Explore Eat &amp; Drink</a>
         </div>
         <div class="media-frame">
-          <!-- Replace with a bistro photo -->
           <img src="assets/img/dining-placeholder.svg" alt="Placeholder dining room scene" />
         </div>
       </div>
     </section>
 
     <section class="section compact">
-      <div class="container grid grid-2">
+      <div class="container grid grid-2 split-section">
         <div class="media-frame">
-          <!-- Replace with a functions photo -->
           <img src="assets/img/functions-placeholder.svg" alt="Placeholder function setup" />
         </div>
-        <div>
-          <span class="badge">Functions</span>
-          <h2>Gather in Gympie</h2>
-          <p>From casual celebrations to corporate events, we offer flexible spaces and friendly service to support your occasion.</p>
-          <a class="btn btn-outline" href="functions/index.html">View Functions</a>
+        <div class="content-stack">
+          <span class="eyebrow">Functions &amp; events</span>
+          <h2>Gather in Gympie without building the night from scratch.</h2>
+          <p>From casual celebrations to corporate events, the venue is set up to handle occasions that need flexibility, clear communication, and a room that already has atmosphere.</p>
+          <div class="surface-note">The current functions page still uses a non-submitting enquiry form, but the user journey already points people toward the right intent: enquire, plan, and convert through direct contact.</div>
+          <a class="btn btn-outline" href="functions/index.html">View Function Spaces</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid grid-2">
+        <div class="section-heading">
+          <span class="eyebrow">What&#8217;s on</span>
+          <h2>Programming that keeps the venue active across the week.</h2>
+          <p>Events are still edited directly in HTML, but they already position the site around repeat reasons to visit: trivia, live sessions, casual Sundays, and community-led nights.</p>
+        </div>
+        <div class="event-list">
+          <div class="event-item">
+            <strong>Trivia Night</strong>
+            <span class="event-meta">Upcoming</span>
+            <p>Bring a team and settle in for a quiz night backed by classic pub favourites and easy banter.</p>
+          </div>
+          <div class="event-item">
+            <strong>Live Acoustic Session</strong>
+            <span class="event-meta">Upcoming</span>
+            <p>Local talent, relaxed volume, and a bar that feels built for lingering a little longer.</p>
+          </div>
+          <div class="event-item">
+            <strong>Sunday Social</strong>
+            <span class="event-meta">Upcoming</span>
+            <p>A softer end to the weekend for locals and visitors who want an easy afternoon in town.</p>
+          </div>
+          <a class="btn btn-outline" href="whats-on/index.html">See What&#8217;s On</a>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="grid grid-2">
-          <div>
-            <span class="badge">What&#8217;s On</span>
-            <h2>Local atmosphere, updated regularly</h2>
-            <p>Our calendar keeps things simple with easy-going events designed for the Gympie community.</p>
-          </div>
-          <div class="event-list">
-            <div class="event-item">
-              <strong>Trivia Night</strong>
-              <span class="event-meta">Upcoming</span>
-              <p>Bring a team and enjoy a relaxed quiz evening with classic pub favourites.</p>
-            </div>
-            <div class="event-item">
-              <strong>Live Acoustic Session</strong>
-              <span class="event-meta">Upcoming</span>
-              <p>Local talent and easy listening in the bar area.</p>
-            </div>
-            <div class="event-item">
-              <strong>Sunday Social</strong>
-              <span class="event-meta">Upcoming</span>
-              <p>A laid-back afternoon to wind down your weekend in Gympie.</p>
-            </div>
-            <a class="btn btn-outline" href="whats-on/index.html">See What&#8217;s On</a>
-          </div>
+        <div class="section-heading">
+          <span class="eyebrow">Gallery</span>
+          <h2>A venue that already has the right bones.</h2>
+          <p>The current gallery still uses placeholder imagery, but the layout now supports a more premium, editorial presentation once real venue photography is ready.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="grid">
-          <div>
-            <span class="badge">Gallery</span>
-            <h2>A glimpse of the venue</h2>
-          </div>
-          <div class="gallery-grid">
-            <!-- Replace gallery images with real venue photos -->
-            <a class="media-frame" href="gallery/index.html">
-              <img src="assets/img/gallery-1.svg" alt="Placeholder gallery image 1" />
-            </a>
-            <a class="media-frame" href="gallery/index.html">
-              <img src="assets/img/gallery-2.svg" alt="Placeholder gallery image 2" />
-            </a>
-            <a class="media-frame" href="gallery/index.html">
-              <img src="assets/img/gallery-3.svg" alt="Placeholder gallery image 3" />
-            </a>
-            <a class="media-frame" href="gallery/index.html">
-              <img src="assets/img/gallery-4.svg" alt="Placeholder gallery image 4" />
-            </a>
-            <a class="media-frame" href="gallery/index.html">
-              <img src="assets/img/gallery-5.svg" alt="Placeholder gallery image 5" />
-            </a>
-            <a class="media-frame" href="gallery/index.html">
-              <img src="assets/img/gallery-6.svg" alt="Placeholder gallery image 6" />
-            </a>
-          </div>
+        <div class="gallery-grid">
+          <a class="media-frame" href="gallery/index.html">
+            <img src="assets/img/gallery-1.svg" alt="Placeholder gallery image 1" />
+          </a>
+          <a class="media-frame" href="gallery/index.html">
+            <img src="assets/img/gallery-2.svg" alt="Placeholder gallery image 2" />
+          </a>
+          <a class="media-frame" href="gallery/index.html">
+            <img src="assets/img/gallery-3.svg" alt="Placeholder gallery image 3" />
+          </a>
+          <a class="media-frame" href="gallery/index.html">
+            <img src="assets/img/gallery-4.svg" alt="Placeholder gallery image 4" />
+          </a>
+          <a class="media-frame" href="gallery/index.html">
+            <img src="assets/img/gallery-5.svg" alt="Placeholder gallery image 5" />
+          </a>
+          <a class="media-frame" href="gallery/index.html">
+            <img src="assets/img/gallery-6.svg" alt="Placeholder gallery image 6" />
+          </a>
         </div>
       </div>
     </section>
@@ -204,8 +255,9 @@
     <section class="section">
       <div class="container">
         <div class="cta-band">
-          <h2>Planning a stay?</h2>
-          <p>Book direct through Booking.com for quick confirmation and flexible options.</p>
+          <span class="badge">Stay the night</span>
+          <h2>Planning a stay in Gympie?</h2>
+          <p>Book through Booking.com for quick confirmation, then use the rest of the venue like it was designed to be part of the same night.</p>
           <a class="btn btn-primary" href="https://www.booking.com/PLACEHOLDER" target="_blank" rel="noopener noreferrer">Book Accommodation</a>
         </div>
       </div>

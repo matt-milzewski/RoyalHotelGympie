@@ -1,9 +1,13 @@
-name: Deploy to S3
+name: Deploy Static Site
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
+concurrency:
+  group: royal-hotel-gympie-production
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -21,11 +25,248 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Sync site to S3
+      - name: Resolve deployment configuration
+        env:
+          INPUT_STACK_NAME: ${{ vars.AWS_CLOUDFRONT_STACK_NAME }}
+          INPUT_PROJECT_NAME: ${{ vars.AWS_PROJECT_NAME }}
+          INPUT_PRICE_CLASS: ${{ vars.AWS_CLOUDFRONT_PRICE_CLASS }}
+          INPUT_BUCKET_NAME: ${{ vars.AWS_ORIGIN_BUCKET_NAME }}
+          INPUT_PRIMARY_DOMAIN: ${{ vars.AWS_PRIMARY_DOMAIN_NAME }}
+          INPUT_HOSTED_ZONE_ID: ${{ vars.AWS_ROUTE53_HOSTED_ZONE_ID }}
+          INPUT_CERTIFICATE_ARN: ${{ vars.AWS_ACM_CERTIFICATE_ARN_US_EAST_1 }}
         run: |
-          aws s3 sync . s3://${{ secrets.AWS_S3_BUCKET }} \
+          echo "STACK_NAME=${INPUT_STACK_NAME:-royal-hotel-gympie-site}" >> "$GITHUB_ENV"
+          echo "PROJECT_NAME=${INPUT_PROJECT_NAME:-royal-hotel-gympie}" >> "$GITHUB_ENV"
+          echo "PRICE_CLASS=${INPUT_PRICE_CLASS:-PriceClass_100}" >> "$GITHUB_ENV"
+          echo "ORIGIN_BUCKET_NAME=${INPUT_BUCKET_NAME}" >> "$GITHUB_ENV"
+          echo "PRIMARY_DOMAIN_NAME=${INPUT_PRIMARY_DOMAIN}" >> "$GITHUB_ENV"
+          echo "ROUTE53_HOSTED_ZONE_ID=${INPUT_HOSTED_ZONE_ID}" >> "$GITHUB_ENV"
+          echo "ACM_CERTIFICATE_ARN=${INPUT_CERTIFICATE_ARN}" >> "$GITHUB_ENV"
+
+      - name: Validate optional domain configuration
+        run: |
+          if [ -n "$ROUTE53_HOSTED_ZONE_ID" ] && [ -z "$PRIMARY_DOMAIN_NAME" ]; then
+            echo "AWS_ROUTE53_HOSTED_ZONE_ID requires AWS_PRIMARY_DOMAIN_NAME." >&2
+            exit 1
+          fi
+
+          if [ -n "$PRIMARY_DOMAIN_NAME" ] && [ -z "$ACM_CERTIFICATE_ARN" ] && [ -z "$ROUTE53_HOSTED_ZONE_ID" ]; then
+            echo "To automate a custom domain, set AWS_ROUTE53_HOSTED_ZONE_ID. Otherwise provide AWS_ACM_CERTIFICATE_ARN_US_EAST_1 manually." >&2
+            exit 1
+          fi
+
+      - name: Provision or reuse ACM certificate in us-east-1
+        if: env.PRIMARY_DOMAIN_NAME != '' && env.ACM_CERTIFICATE_ARN == ''
+        run: |
+          EXISTING_CERT_ARN=$(aws acm list-certificates \
+            --region us-east-1 \
+            --certificate-statuses ISSUED PENDING_VALIDATION \
+            --query "CertificateSummaryList[?DomainName=='$PRIMARY_DOMAIN_NAME'] | [0].CertificateArn" \
+            --output text)
+
+          if [ "$EXISTING_CERT_ARN" = "None" ] || [ -z "$EXISTING_CERT_ARN" ]; then
+            TOKEN=$(printf '%s' "$PRIMARY_DOMAIN_NAME" | tr -cd '[:alnum:]' | tr '[:upper:]' '[:lower:]' | cut -c1-32)
+            EXISTING_CERT_ARN=$(aws acm request-certificate \
+              --region us-east-1 \
+              --domain-name "$PRIMARY_DOMAIN_NAME" \
+              --validation-method DNS \
+              --idempotency-token "${TOKEN:-royalhotelgympie}" \
+              --query CertificateArn \
+              --output text)
+          fi
+
+          echo "ACM_CERTIFICATE_ARN=$EXISTING_CERT_ARN" >> "$GITHUB_ENV"
+
+      - name: Create Route 53 validation record for ACM
+        if: env.PRIMARY_DOMAIN_NAME != '' && env.ROUTE53_HOSTED_ZONE_ID != '' && env.ACM_CERTIFICATE_ARN != ''
+        run: |
+          for attempt in $(seq 1 30); do
+            VALIDATION_NAME=$(aws acm describe-certificate \
+              --region us-east-1 \
+              --certificate-arn "$ACM_CERTIFICATE_ARN" \
+              --query "Certificate.DomainValidationOptions[?DomainName=='$PRIMARY_DOMAIN_NAME'] | [0].ResourceRecord.Name" \
+              --output text)
+            VALIDATION_TYPE=$(aws acm describe-certificate \
+              --region us-east-1 \
+              --certificate-arn "$ACM_CERTIFICATE_ARN" \
+              --query "Certificate.DomainValidationOptions[?DomainName=='$PRIMARY_DOMAIN_NAME'] | [0].ResourceRecord.Type" \
+              --output text)
+            VALIDATION_VALUE=$(aws acm describe-certificate \
+              --region us-east-1 \
+              --certificate-arn "$ACM_CERTIFICATE_ARN" \
+              --query "Certificate.DomainValidationOptions[?DomainName=='$PRIMARY_DOMAIN_NAME'] | [0].ResourceRecord.Value" \
+              --output text)
+
+            if [ "$VALIDATION_NAME" != "None" ] && [ -n "$VALIDATION_NAME" ] && [ "$VALIDATION_TYPE" != "None" ] && [ "$VALIDATION_VALUE" != "None" ]; then
+              cat > route53-validation-record.json <<EOF
+          {
+            "Comment": "Validate ACM certificate for $PRIMARY_DOMAIN_NAME",
+            "Changes": [
+              {
+                "Action": "UPSERT",
+                "ResourceRecordSet": {
+                  "Name": "$VALIDATION_NAME",
+                  "Type": "$VALIDATION_TYPE",
+                  "TTL": 300,
+                  "ResourceRecords": [
+                    {
+                      "Value": "$VALIDATION_VALUE"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+          EOF
+              aws route53 change-resource-record-sets \
+                --hosted-zone-id "$ROUTE53_HOSTED_ZONE_ID" \
+                --change-batch file://route53-validation-record.json
+              break
+            fi
+
+            sleep 10
+          done
+
+      - name: Wait for ACM certificate issuance
+        if: env.PRIMARY_DOMAIN_NAME != '' && env.ACM_CERTIFICATE_ARN != ''
+        run: |
+          for attempt in $(seq 1 40); do
+            CERT_STATUS=$(aws acm describe-certificate \
+              --region us-east-1 \
+              --certificate-arn "$ACM_CERTIFICATE_ARN" \
+              --query "Certificate.Status" \
+              --output text)
+
+            if [ "$CERT_STATUS" = "ISSUED" ]; then
+              exit 0
+            fi
+
+            if [ "$CERT_STATUS" = "FAILED" ] || [ "$CERT_STATUS" = "EXPIRED" ] || [ "$CERT_STATUS" = "VALIDATION_TIMED_OUT" ] || [ "$CERT_STATUS" = "REVOKED" ]; then
+              echo "Certificate request entered terminal state: $CERT_STATUS" >&2
+              exit 1
+            fi
+
+            sleep 15
+          done
+
+          echo "Certificate for $PRIMARY_DOMAIN_NAME was not issued in time." >&2
+          exit 1
+
+      - name: Provision or update CloudFront infrastructure
+        run: |
+          PARAMS=("ProjectName=$PROJECT_NAME" "PriceClass=$PRICE_CLASS")
+
+          if [ -n "$ORIGIN_BUCKET_NAME" ]; then
+            PARAMS+=("OriginBucketName=$ORIGIN_BUCKET_NAME")
+          fi
+
+          if [ -n "$PRIMARY_DOMAIN_NAME" ]; then
+            PARAMS+=("PrimaryDomainName=$PRIMARY_DOMAIN_NAME" "AcmCertificateArn=$ACM_CERTIFICATE_ARN")
+          fi
+
+          aws cloudformation deploy \
+            --stack-name "$STACK_NAME" \
+            --template-file infra/cloudfront-site.yml \
+            --no-fail-on-empty-changeset \
+            --parameter-overrides "${PARAMS[@]}"
+
+      - name: Read stack outputs
+        run: |
+          ORIGIN_BUCKET=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='OriginBucketName'].OutputValue" --output text)
+          DISTRIBUTION_ID=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='CloudFrontDistributionId'].OutputValue" --output text)
+          DISTRIBUTION_DOMAIN=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='CloudFrontDomainName'].OutputValue" --output text)
+          SITE_URL=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='SiteUrl'].OutputValue" --output text)
+
+          echo "ORIGIN_BUCKET=$ORIGIN_BUCKET" >> "$GITHUB_ENV"
+          echo "DISTRIBUTION_ID=$DISTRIBUTION_ID" >> "$GITHUB_ENV"
+          echo "DISTRIBUTION_DOMAIN=$DISTRIBUTION_DOMAIN" >> "$GITHUB_ENV"
+          echo "SITE_URL=$SITE_URL" >> "$GITHUB_ENV"
+
+      - name: Stage static site bundle
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          cp index.html privacy.html terms.html robots.txt sitemap.xml dist/
+          cp -R about accommodation assets contact eat-drink functions gallery whats-on dist/
+
+      - name: Upload HTML and metadata
+        run: |
+          aws s3 sync dist "s3://$ORIGIN_BUCKET" \
             --delete \
-            --exclude ".git/*" \
-            --exclude ".github/*" \
-            --exclude ".DS_Store" \
-            --exclude "README.md"
+            --exclude "assets/*" \
+            --cache-control "public,max-age=0,no-cache,no-store,must-revalidate"
+
+      - name: Upload cacheable assets
+        run: |
+          aws s3 sync dist/assets "s3://$ORIGIN_BUCKET/assets" \
+            --delete \
+            --cache-control "public,max-age=31536000,immutable"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "$DISTRIBUTION_ID" \
+            --paths "/*"
+
+      - name: Create Route 53 alias for CloudFront
+        if: env.PRIMARY_DOMAIN_NAME != '' && env.ROUTE53_HOSTED_ZONE_ID != ''
+        run: |
+          cat > route53-alias-record.json <<EOF
+          {
+            "Comment": "Alias $PRIMARY_DOMAIN_NAME to CloudFront",
+            "Changes": [
+              {
+                "Action": "UPSERT",
+                "ResourceRecordSet": {
+                  "Name": "$PRIMARY_DOMAIN_NAME",
+                  "Type": "A",
+                  "AliasTarget": {
+                    "HostedZoneId": "Z2FDTNDATAQYW2",
+                    "DNSName": "$DISTRIBUTION_DOMAIN",
+                    "EvaluateTargetHealth": false
+                  }
+                }
+              },
+              {
+                "Action": "UPSERT",
+                "ResourceRecordSet": {
+                  "Name": "$PRIMARY_DOMAIN_NAME",
+                  "Type": "AAAA",
+                  "AliasTarget": {
+                    "HostedZoneId": "Z2FDTNDATAQYW2",
+                    "DNSName": "$DISTRIBUTION_DOMAIN",
+                    "EvaluateTargetHealth": false
+                  }
+                }
+              }
+            ]
+          }
+          EOF
+
+          aws route53 change-resource-record-sets \
+            --hosted-zone-id "$ROUTE53_HOSTED_ZONE_ID" \
+            --change-batch file://route53-alias-record.json
+
+      - name: Publish deployment summary
+        run: |
+          {
+            echo "### Static site deployment"
+            echo ""
+            echo "- Stack: \`$STACK_NAME\`"
+            echo "- Project name: \`$PROJECT_NAME\`"
+            echo "- S3 origin bucket: \`$ORIGIN_BUCKET\`"
+            echo "- CloudFront distribution: \`$DISTRIBUTION_ID\`"
+            echo "- CloudFront domain: \`$DISTRIBUTION_DOMAIN\`"
+            echo "- Site URL: $SITE_URL"
+            if [ -n "$PRIMARY_DOMAIN_NAME" ]; then
+              echo "- Custom domain target: \`$PRIMARY_DOMAIN_NAME\`"
+              if [ -n "$ROUTE53_HOSTED_ZONE_ID" ]; then
+                echo "- Route 53 hosted zone: \`$ROUTE53_HOSTED_ZONE_ID\`"
+              fi
+              if [ -n "$ACM_CERTIFICATE_ARN" ]; then
+                echo "- ACM certificate: \`$ACM_CERTIFICATE_ARN\`"
+              fi
+            else
+              echo "- Custom domain target: not configured yet"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
