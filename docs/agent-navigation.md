@@ -21,7 +21,7 @@ This file is for fast orientation before editing the Royal Hotel Gympie site. Th
 | Content pages | `about/`, `eat-drink/`, `accommodation/`, `gallery/`, `contact/` | Section-specific content |
 | Shared styles | `assets/css/styles.css` | Global layout, color, typography, hero, grid, nav, footer, lightbox |
 | Shared behavior | `assets/js/main.js` | Mobile nav, header scroll state, gallery lightbox |
-| Images | `assets/img/` | Placeholder SVG assets to be replaced |
+| Images | `assets/img/` | Curated stock JPG assets, favicon, and OG image. Source list: `docs/image-sources.md` |
 | SEO files | `robots.txt`, `sitemap.xml` | Crawl and indexing metadata |
 | Legal pages | `privacy.html`, `terms.html` | Static legal content |
 | Deployment | `.github/workflows/deploy.yml` | Provisions infra and publishes the static bundle |
@@ -135,9 +135,9 @@ If a gallery/lightbox change breaks, inspect the data attributes first.
 
 ## Important Runtime Caveat
 
-Hero background images are currently wired through CSS custom properties and the relative URLs are resolving against the stylesheet path. That is producing live 404s for hero background assets.
+Hero background images are now defined centrally in `assets/css/styles.css`, not inline per page.
 
-Do not assume a hero background path is correct just because the HTML looks correct. Verify in a browser after changing it.
+If you change a hero asset, verify both desktop and mobile crops in a browser. The image paths are simpler now, but the visual crop can still drift.
 
 ## Practical Edit Strategy
 

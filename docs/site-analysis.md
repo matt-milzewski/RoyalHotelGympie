@@ -12,12 +12,12 @@
 
 This repository is a brochure-style website for The Royal Hotel Gympie. It is not a web app and it does not have a CMS, database, server-rendered templates, or online form processing.
 
-The current implementation behaves like a starter site or launch template:
+The current implementation behaves like a launch-ready starter site:
 
 - the structure is complete
 - the visual system is in place
 - the page set is defined
-- most content is still placeholder or semi-placeholder
+- most business content is still placeholder or semi-placeholder
 - key venue details are repeated manually across pages
 
 ## Current Goal of the Site
@@ -35,7 +35,7 @@ The site is trying to do three things:
 - `index.html` plus directory-based HTML pages for each section
 - shared stylesheet: `assets/css/styles.css`
 - shared JavaScript: `assets/js/main.js`
-- SVG placeholder imagery in `assets/img/`
+- curated stock photography and favicon assets in `assets/img/`
 
 ### Runtime behavior
 
@@ -177,11 +177,10 @@ The site already includes a basic SEO layer:
 
 ### SEO limitations in the current state
 
-- Open Graph image is still a placeholder SVG
+- Open Graph now uses a stock hospitality image rather than venue-owned photography
 - venue contact details are placeholders
 - social links are placeholders
 - Booking.com URL is a placeholder
-- no favicon is present
 - no canonical tags are defined
 - schema is repeated manually page by page, which increases maintenance risk
 
@@ -198,7 +197,7 @@ The baseline is better than average for a static starter site:
 ### Accessibility caveats
 
 - gallery/lightbox behavior should always be rechecked after image/path changes
-- repeated placeholder alt text should be replaced with real descriptive copy when production images are added
+- stock-image alt text should be kept aligned with any future asset swaps
 
 ## Operational And Content Risks
 
@@ -208,17 +207,19 @@ There is no partial system. A global contact update requires editing many files 
 
 ### 2. The site is still placeholder-heavy
 
-The repo contains placeholder:
+The repo still contains placeholder:
 
 - booking links
 - address
 - phone
 - social URLs
-- image assets
+- contact details and links
 - map embed
 - legal copy
 - menu content
 - event content
+
+Temporary stock imagery is now in place, but it should still be replaced with venue-owned photography before launch.
 
 ### 3. Repeated static content can drift over time
 
@@ -230,25 +231,7 @@ The deployment path is more robust than the previous S3-only sync, but it now de
 
 ## Verified Runtime Findings
 
-The live browser pass surfaced these current issues:
-
-### Broken hero background image paths
-
-Hero backgrounds use inline CSS custom properties like:
-
-- `--hero-image: url('assets/img/hero-placeholder.svg')`
-- `--hero-image: url('../assets/img/about-placeholder.svg')`
-
-Because the custom property is consumed inside the shared stylesheet, the browser resolves those relative URLs against `assets/css/styles.css` instead of the page URL. That causes 404s such as:
-
-- `/assets/css/assets/img/hero-placeholder.svg`
-- `/assets/assets/img/gallery-1.svg`
-
-Effect: hero background imagery is currently unreliable or broken at runtime.
-
-### Missing favicon
-
-The browser reports a 404 for `/favicon.ico`.
+The live browser pass no longer shows the earlier hero-background path bug or missing-favicon request. Hero imagery is now wired directly in shared CSS and the site ships a working favicon.
 
 ## Where The Site Is Strong
 
@@ -274,7 +257,7 @@ The browser reports a 404 for `/favicon.ico`.
 ### High-impact content work
 
 - replace all global placeholders with real venue details
-- replace all placeholder images and gallery assets
+- replace temporary stock photography with venue-owned photography
 - replace sample menu and event text with real business content
 
 ### Structural improvements

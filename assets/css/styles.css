@@ -461,27 +461,33 @@ body.nav-open .nav-menu {
 }
 
 .hero-home {
-  background-image: url("../img/hero-placeholder.svg");
+  background-image: url("../img/bistro-dining.jpg");
+  background-position: center 56%;
 }
 
 .hero-about {
-  background-image: url("../img/about-placeholder.svg");
+  background-image: url("../img/venue-lounge.jpg");
+  background-position: center;
 }
 
 .hero-eat-drink {
-  background-image: url("../img/dining-placeholder.svg");
+  background-image: url("../img/bar-lounge.jpg");
+  background-position: center;
 }
 
 .hero-accommodation {
-  background-image: url("../img/accommodation-placeholder.svg");
+  background-image: url("../img/guest-room.jpg");
+  background-position: center 58%;
 }
 
 .hero-gallery {
-  background-image: url("../img/gallery-1.svg");
+  background-image: url("../img/venue-lounge.jpg");
+  background-position: center;
 }
 
 .hero-contact {
-  background-image: url("../img/about-placeholder.svg");
+  background-image: url("../img/courtyard-dusk.jpg");
+  background-position: center 60%;
 }
 
 .hero-shell {
@@ -725,6 +731,14 @@ body.nav-open .nav-menu {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.portrait-shot {
+  object-position: center 34%;
+}
+
+.room-shot {
+  object-position: center 42%;
 }
 
 .stats-grid {
@@ -1016,42 +1030,42 @@ details.surface p {
   background-image:
     linear-gradient(115deg, rgba(6, 14, 12, 0.92), rgba(6, 14, 12, 0.6) 56%, rgba(6, 14, 12, 0.28)),
     linear-gradient(180deg, rgba(6, 14, 12, 0.15), rgba(6, 14, 12, 0.76)),
-    url("../img/hero-placeholder.svg");
+    url("../img/bistro-dining.jpg");
 }
 
 .hero.hero-about {
   background-image:
     linear-gradient(115deg, rgba(6, 14, 12, 0.92), rgba(6, 14, 12, 0.6) 56%, rgba(6, 14, 12, 0.28)),
     linear-gradient(180deg, rgba(6, 14, 12, 0.15), rgba(6, 14, 12, 0.76)),
-    url("../img/about-placeholder.svg");
+    url("../img/venue-lounge.jpg");
 }
 
 .hero.hero-eat-drink {
   background-image:
     linear-gradient(115deg, rgba(6, 14, 12, 0.92), rgba(6, 14, 12, 0.6) 56%, rgba(6, 14, 12, 0.28)),
     linear-gradient(180deg, rgba(6, 14, 12, 0.15), rgba(6, 14, 12, 0.76)),
-    url("../img/dining-placeholder.svg");
+    url("../img/bar-lounge.jpg");
 }
 
 .hero.hero-accommodation {
   background-image:
     linear-gradient(115deg, rgba(6, 14, 12, 0.92), rgba(6, 14, 12, 0.6) 56%, rgba(6, 14, 12, 0.28)),
     linear-gradient(180deg, rgba(6, 14, 12, 0.15), rgba(6, 14, 12, 0.76)),
-    url("../img/accommodation-placeholder.svg");
+    url("../img/guest-room.jpg");
 }
 
 .hero.hero-gallery {
   background-image:
     linear-gradient(115deg, rgba(6, 14, 12, 0.92), rgba(6, 14, 12, 0.6) 56%, rgba(6, 14, 12, 0.28)),
     linear-gradient(180deg, rgba(6, 14, 12, 0.15), rgba(6, 14, 12, 0.76)),
-    url("../img/gallery-1.svg");
+    url("../img/venue-lounge.jpg");
 }
 
 .hero.hero-contact {
   background-image:
     linear-gradient(115deg, rgba(6, 14, 12, 0.92), rgba(6, 14, 12, 0.6) 56%, rgba(6, 14, 12, 0.28)),
     linear-gradient(180deg, rgba(6, 14, 12, 0.15), rgba(6, 14, 12, 0.76)),
-    url("../img/about-placeholder.svg");
+    url("../img/courtyard-dusk.jpg");
 }
 
 .hero .eyebrow,
