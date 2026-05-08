@@ -75,6 +75,24 @@ Resources:
         function handler(event) {
             var request = event.request;
             var uri = request.uri;
+            var retiredRoutes = {
+                '/functions': '/',
+                '/functions/': '/',
+                '/functions/index.html': '/',
+                '/whats-on': '/',
+                '/whats-on/': '/',
+                '/whats-on/index.html': '/'
+            };
+
+            if (retiredRoutes[uri]) {
+                return {
+                    statusCode: 301,
+                    statusDescription: 'Moved Permanently',
+                    headers: {
+                        location: { value: retiredRoutes[uri] }
+                    }
+                };
+            }
 
             if (uri.endsWith('/')) {
                 request.uri += 'index.html';
