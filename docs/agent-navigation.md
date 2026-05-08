@@ -18,7 +18,7 @@ This file is for fast orientation before editing the Royal Hotel Gympie site. Th
 | Area | Path | Why it matters |
 | --- | --- | --- |
 | Home page | `index.html` | Main landing page and highest-traffic template |
-| Content pages | `about/`, `eat-drink/`, `functions/`, `whats-on/`, `accommodation/`, `gallery/`, `contact/` | Section-specific content |
+| Content pages | `about/`, `eat-drink/`, `accommodation/`, `gallery/`, `contact/` | Section-specific content |
 | Shared styles | `assets/css/styles.css` | Global layout, color, typography, hero, grid, nav, footer, lightbox |
 | Shared behavior | `assets/js/main.js` | Mobile nav, header scroll state, gallery lightbox |
 | Images | `assets/img/` | Placeholder SVG assets to be replaced |
@@ -66,7 +66,7 @@ Reason: there is no shared layout partial. These values are repeated directly in
 - key CTAs
 - home hero
 - venue highlights
-- intro to dining, functions, events, gallery, and accommodation
+- intro to dining, drinks, gallery, and accommodation
 
 ### `about/index.html`
 
@@ -77,17 +77,6 @@ Reason: there is no shared layout partial. These values are repeated directly in
 - bistro and bar
 - group dining
 - sample menu content
-
-### `functions/index.html`
-
-- event categories
-- enquiry form shell
-- note that the form is non-functional
-
-### `whats-on/index.html`
-
-- static event cards
-- all event content is edited directly in page HTML
 
 ### `accommodation/index.html`
 

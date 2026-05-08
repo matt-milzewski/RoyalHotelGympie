@@ -187,7 +187,7 @@ jobs:
           rm -rf dist
           mkdir -p dist
           cp index.html privacy.html terms.html robots.txt sitemap.xml dist/
-          cp -R about accommodation assets contact eat-drink functions gallery whats-on dist/
+          cp -R about accommodation assets contact eat-drink gallery dist/
 
       - name: Upload HTML and metadata
         run: |

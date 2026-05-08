@@ -6,7 +6,7 @@
 - Delivery model: plain HTML, one shared CSS file, one shared JS file
 - Build step: none
 - Primary business intent: convert visitors into accommodation bookings and general venue enquiries
-- Secondary intent: present the venue as a local hospitality destination for dining, drinks, functions, and events
+- Secondary intent: present the venue as a local hospitality destination for dining, drinks, and accommodation
 
 ## What This Website Currently Is
 
@@ -26,7 +26,7 @@ The site is trying to do three things:
 
 1. Establish the venue's positioning as a welcoming local hotel in Gympie.
 2. Drive accommodation bookings through an external Booking.com link.
-3. Capture interest for dining, events, and functions by pushing visitors toward the contact page or direct phone/email contact.
+3. Capture interest for dining and accommodation by pushing visitors toward Booking.com or direct contact.
 
 ## Stack And Runtime Model
 
@@ -55,15 +55,13 @@ The site is trying to do three things:
 
 ## Information Architecture
 
-There are 10 public HTML pages:
+There are 8 public HTML pages:
 
 | Page | Path | Purpose |
 | --- | --- | --- |
 | Home | `index.html` | Primary landing page and main conversion hub |
 | About | `about/index.html` | Brand and venue positioning |
 | Eat & Drink | `eat-drink/index.html` | Bistro, bar, groups, sample menu |
-| Functions & Events | `functions/index.html` | Event categories and enquiry prompt |
-| What's On | `whats-on/index.html` | Static event listings |
 | Accommodation | `accommodation/index.html` | Booking-focused stay page |
 | Gallery | `gallery/index.html` | Image gallery with lightbox |
 | Contact | `contact/index.html` | Address, hours, map, call/email prompt |
@@ -81,13 +79,7 @@ There are 10 public HTML pages:
 ### Venue discovery
 
 - users land on home
-- branch to About, Eat & Drink, Functions, What's On, Accommodation, Gallery, Contact
-
-### Function enquiry
-
-- users are nudged toward `functions/index.html`
-- the page contains a visual form, but it does not submit
-- the page explicitly tells users to continue through the contact page
+- branch to About, Eat & Drink, Accommodation, Gallery, and Contact
 
 ### General contact
 
@@ -169,8 +161,6 @@ The following information is duplicated across most or all pages and must be upd
 - Home: high-level venue positioning, teaser cards, highlight sections
 - About: brand story and expectations
 - Eat & Drink: bistro/bar/groups and a sample menu
-- Functions: event types plus a non-submitting form shell
-- What's On: static event cards edited directly in HTML
 - Accommodation: booking pitch, FAQs, reasons to stay
 - Gallery: six gallery items and captions
 - Contact: hours table and map embed
@@ -207,7 +197,6 @@ The baseline is better than average for a static starter site:
 
 ### Accessibility caveats
 
-- the functions enquiry UI looks like a real form but is not operational
 - gallery/lightbox behavior should always be rechecked after image/path changes
 - repeated placeholder alt text should be replaced with real descriptive copy when production images are added
 
@@ -231,10 +220,9 @@ The repo contains placeholder:
 - menu content
 - event content
 
-### 3. Some UI elements imply functionality that does not exist
+### 3. Repeated static content can drift over time
 
-- the functions form does not submit
-- the What's On page shows disabled "Add to Calendar" buttons
+- repeated venue details, metadata, and navigation links still require manual updates across multiple HTML files
 
 ### 4. Production now depends on infrastructure variables being correct
 

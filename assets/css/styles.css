@@ -472,14 +472,6 @@ body.nav-open .nav-menu {
   background-image: url("../img/dining-placeholder.svg");
 }
 
-.hero-functions {
-  background-image: url("../img/functions-placeholder.svg");
-}
-
-.hero-whats-on {
-  background-image: url("../img/functions-placeholder.svg");
-}
-
 .hero-accommodation {
   background-image: url("../img/accommodation-placeholder.svg");
 }
@@ -1039,14 +1031,6 @@ details.surface p {
     linear-gradient(115deg, rgba(6, 14, 12, 0.92), rgba(6, 14, 12, 0.6) 56%, rgba(6, 14, 12, 0.28)),
     linear-gradient(180deg, rgba(6, 14, 12, 0.15), rgba(6, 14, 12, 0.76)),
     url("../img/dining-placeholder.svg");
-}
-
-.hero.hero-functions,
-.hero.hero-whats-on {
-  background-image:
-    linear-gradient(115deg, rgba(6, 14, 12, 0.92), rgba(6, 14, 12, 0.6) 56%, rgba(6, 14, 12, 0.28)),
-    linear-gradient(180deg, rgba(6, 14, 12, 0.15), rgba(6, 14, 12, 0.76)),
-    url("../img/functions-placeholder.svg");
 }
 
 .hero.hero-accommodation {
