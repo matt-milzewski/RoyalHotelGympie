@@ -139,6 +139,8 @@ Hero background images are now defined centrally in `assets/css/styles.css`, not
 
 If you change a hero asset, verify both desktop and mobile crops in a browser. The image paths are simpler now, but the visual crop can still drift.
 
+The public HTML now adds a manual query-string version to the shared CSS and JS files. If you make a shared front-end change and want to avoid stale browser caches, bump that `?v=` value across the HTML pages in the same commit.
+
 ## Practical Edit Strategy
 
 ### For content edits
