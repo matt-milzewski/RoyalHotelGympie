@@ -390,13 +390,17 @@ body.nav-open {
   overflow: hidden;
 }
 
+body.nav-open .site-header {
+  z-index: 1250;
+}
+
 body.nav-open::after {
   content: "";
   position: fixed;
   inset: 0;
   background: rgba(15, 28, 23, 0.3);
   backdrop-filter: blur(4px);
-  z-index: 1150;
+  z-index: 1050;
 }
 
 body.nav-open .nav-menu {
