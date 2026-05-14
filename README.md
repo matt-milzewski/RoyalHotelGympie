@@ -6,7 +6,7 @@
 ## Current public details
 - Booking URL: `https://www.booking.com/searchresults.html?ss=The%20Royal%20Hotel%20Gympie%2C%20Gympie%2C%20Queensland%2C%20Australia`
 - Address: `190 Mary Street, Gympie QLD 4570`
-- Phone and email: `07 5483 7857`, `admin@theroyalgympie.com.au`
+- Phone and email: `07 5483 7857`, `admin@royalgympie.com.au`
 - Social links: not configured
 
 ## Replace these placeholders
