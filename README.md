@@ -3,11 +3,13 @@
 ## Run locally
 - Run `python3 -m http.server 4173` from the repo root and open `http://127.0.0.1:4173/`.
 
+## Current public details
+- Booking URL: `https://www.booking.com/searchresults.html?ss=The%20Royal%20Hotel%20Gympie%2C%20Gympie%2C%20Queensland%2C%20Australia`
+- Address: `190 Mary Street, Gympie QLD 4570`
+- Phone and email: `07 5483 7857`, `admin@theroyalgympie.com.au`
+- Social links: not configured
+
 ## Replace these placeholders
-- Booking URL: `https://www.booking.com/PLACEHOLDER`
-- Address: `[INSERT STREET ADDRESS]`
-- Phone and email: `(07) 0000 0000`, `hello@royalhotelgympie.com.au`
-- Social links: `https://www.facebook.com/PLACEHOLDER`, `https://www.instagram.com/PLACEHOLDER`
 - Images: replace files in `assets/img/` and update any captions or alt text if needed
 - Map iframe: update the `src` attribute in `contact/index.html`
 - Site URL in metadata and `sitemap.xml`

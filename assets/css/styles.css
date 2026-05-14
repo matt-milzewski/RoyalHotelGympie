@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
 
 :root {
+  --container-max: 1180px;
+  --container-gutter: 2rem;
   --bg: #f2e8d8;
   --bg-deep: #eadcc7;
   --surface: rgba(255, 249, 241, 0.88);
@@ -158,7 +160,7 @@ ul {
 }
 
 .container {
-  width: min(1180px, calc(100% - 2rem));
+  width: min(var(--container-max), calc(100% - var(--container-gutter)));
   margin: 0 auto;
 }
 
@@ -495,7 +497,6 @@ body.nav-open .nav-menu {
 }
 
 .hero-shell {
-  width: 100%;
   display: grid;
   gap: clamp(1.5rem, 3vw, 2rem);
   align-items: end;
