@@ -4,15 +4,19 @@
 - Run `python3 -m http.server 4173` from the repo root and open `http://127.0.0.1:4173/`.
 
 ## Current public details
-- Booking URL: `https://www.booking.com/searchresults.html?ss=The%20Royal%20Hotel%20Gympie%2C%20Gympie%2C%20Queensland%2C%20Australia`
-- Address: `190 Mary Street, Gympie QLD 4570`
-- Phone and email: `07 5483 7857`, `admin@royalgympie.com.au`
+- Booking model: direct only — by phone or email (not Booking.com)
+- Address: `188-190 Mary Street, Gympie QLD 4570`
+- Phone and email: `0431 295 126` (mobile), `admin@royalgympie.com.au`
+- Managers: Gary & Joanne Churchill (on-site)
+- Rates: king single $130/night, double/queen $150/night, $600 flat weekly (7 nights, serviced weekly)
+- Brand palette: royal purple `#3f1954`, gold `#f8cc23`, rich black `#130c0e` (logo: `assets/img/image001.png`)
 - Social links: not configured
 
-## Replace these placeholders
-- Images: replace files in `assets/img/` and update any captions or alt text if needed
-- Map iframe: update the `src` attribute in `contact/index.html`
+## Still to confirm / replace
+- Email address: confirm `admin@royalgympie.com.au` is current
+- Reception / check-in hours: none published yet (Contact says "call ahead")
 - Site URL in metadata and `sitemap.xml`
+- Retire remaining stock images once happy with real photo selection (see `docs/image-sources.md`)
 
 ## Deploy to S3 + CloudFront
 
