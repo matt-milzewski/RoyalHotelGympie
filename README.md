@@ -9,7 +9,7 @@
 - Phone and email: `0431 295 126` (mobile), `admin@royalgympie.com.au`
 - Managers: Gary & Joanne Churchill (on-site)
 - Rates: king single $130/night, double/queen $150/night, $600 flat weekly (7 nights, serviced weekly)
-- Brand palette: royal purple `#3f1954`, gold `#f8cc23`, rich black `#130c0e` (logo: `assets/img/image001.png`)
+- Brand palette: royal purple `#3f1954`, gold `#f8cc23`, rich black `#130c0e` (logo: `assets/img/royal-hotel-logo.png`)
 - Social links: not configured
 
 ## Still to confirm / replace

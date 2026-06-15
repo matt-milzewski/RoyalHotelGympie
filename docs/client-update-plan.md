@@ -67,12 +67,12 @@ always reopened → recent refurbishment → now accommodation + private functio
 
 ## 3. BRAND FINDING — needs a decision
 
-`assets/img/image001.png` is the **official logo + brand palette**:
+`assets/img/royal-hotel-logo.png` is the **official logo + brand palette**:
 - Gold `#f8cc23`
 - Royal Purple `#3f1954`
 - Rich Black `#130c0e`
 
-`assets/img/Long r.jpeg` is a purple/gold "THE ROYAL — 0431 295 126" banner.
+`assets/img/royal-hotel-phone-banner.jpeg` is a purple/gold "THE ROYAL — 0431 295 126" banner.
 
 The current site uses an unrelated **cream/tan/brown/amber** hospitality palette and a plain
 text logo. The real brand is **purple + gold + black**. Options:
@@ -96,18 +96,18 @@ text logo. The real brand is **purple + gold + black**. Options:
 ## 5. Per-page plan
 
 ### Home (`index.html`)
-- Hero: real exterior (`The royal.jpg`). Headline shifts to **stay / heritage / central Gympie**.
+- Hero: real exterior (`royal-hotel-art-deco-facade.jpg`). Headline shifts to **stay / heritage / central Gympie**.
 - Hero meta chips → "Call to book 0431 295 126", "Central Gympie", "Heritage Art Deco hotel".
 - Feature cards → Accommodation (primary), Facilities, Our Story (history), Functions, Contact.
 - Replace bistro/bar split sections with **Accommodation** + **Facilities** highlights.
 - Replace Booking.com CTA band with **Call/Email to book** band + rate snapshot.
 
 ### Accommodation (`accommodation/index.html`) — now the flagship page
-- Hero: `room 5.jpg` or `room5-a.jpg`.
+- Hero: `room-5-kitchenette-workspace.jpg` or `room-5-bedroom.jpg`.
 - Room types + **rates table** ($130 king single, $150 double/queen, $600/week serviced weekly).
 - In-room features list (aircon, kitchenette, ensuite, WiFi, smart TV, continental breakfast).
 - "How to book" = phone/email (no Booking.com). FAQ rewritten accordingly.
-- Photos: room5, room5-a, room 11, room3-a / room 11-1 (kitchenette), 20230426_143616.
+- Photos: `room-5-kitchenette-workspace.jpg`, `room-5-bedroom.jpg`, `room-11-bedroom.jpg`, `room-3-kitchenette.jpg`, `room-11-kitchenette-bedroom.jpg`, and `single-room-kitchenette-workspace.jpg`.
 
 ### About (`about/index.html`)
 - Expand into the **heritage story** (use the supplied "A Colourful Past" copy, trimmed).
@@ -137,56 +137,56 @@ Legend: ★ = strongest pick. Several photos are phone shots rotated 90° — no
 ### Exterior (modern)
 | File | Best use |
 | --- | --- |
-| `The royal.jpg` ★ | Home hero / OG image (clean blue-sky corner facade) |
-| `285202405.jpg` | Alt hero / About / gallery (clean daytime wide) |
-| `20230426_182603.jpg` | Gallery — evening "NOW OPEN" facade |
-| `20230426_182943.jpg` | Gallery — night lit facade |
-| `20230427_175427.jpg` | Contact/Accommodation — dusk + accommodation entrance signage |
-| `20231009_141817[1098].jpg` | Gallery — Art Deco detail |
+| `royal-hotel-art-deco-facade.jpg` ★ | Home hero / OG image (clean blue-sky corner facade) |
+| `royal-hotel-mary-street-day.jpg` | Alt hero / About / gallery (clean daytime wide) |
+| `royal-hotel-night-corner-view.jpg` | Gallery — evening "NOW OPEN" facade |
+| `royal-hotel-night-side-view.jpg` | Gallery — night lit facade |
+| `royal-hotel-facade-signage.jpg` | Contact/Accommodation — dusk + accommodation entrance signage |
+| `royal-hotel-corner-facade-day.jpg` | Gallery — Art Deco detail |
 | `front street view.jpg` | About/Contact — street context |
 | `entrance.jpg` ★ | Contact hero / Accommodation "how to check in" (phone sign visible) |
 
 ### Rooms
 | File | Best use |
 | --- | --- |
-| `room 5.jpg` ★ | Accommodation hero (kitchenette + TV + desk, bright) |
-| `room5-a.jpg` ★ | Accommodation feature / Home accommodation block (made queen bed) |
-| `room 11.jpg` | Accommodation room-type / gallery |
-| `room3-a.jpg` | Accommodation "kitchenette" amenity shot |
-| `room 11-1.jpg` | Accommodation amenity (fridge/wardrobe/ensuite door) |
-| `20230426_143616.jpg` | Accommodation / gallery (kitchenette + desk) |
+| `room-5-kitchenette-workspace.jpg` ★ | Accommodation hero (kitchenette + TV + desk, bright) |
+| `room-5-bedroom.jpg` ★ | Accommodation feature / Home accommodation block (made queen bed) |
+| `room-11-bedroom.jpg` | Accommodation room-type / gallery |
+| `room-3-kitchenette.jpg` | Accommodation "kitchenette" amenity shot |
+| `room-11-kitchenette-bedroom.jpg` | Accommodation amenity (fridge/wardrobe/ensuite door) |
+| `single-room-kitchenette-workspace.jpg` | Accommodation / gallery (kitchenette + desk) |
 | `room 3.jpg` (rotated) | Gallery if rotation handled |
-| `20230605_124504/124613.jpg` (rotated) | Gallery reserve |
+| `queen-room-floral-bedding.jpg` / `twin-room-sofa-workspace.jpg` (rotated) | Gallery reserve |
 
 ### Facilities / common areas
 | File | Best use |
 | --- | --- |
-| `fire place.jpg` ★ | Facilities / Home — "large lounge area" feature |
+| `guest-lounge-fireplace.jpg` ★ | Facilities / Home — "large lounge area" feature |
 | `foyer.jpg` | Facilities / Contact — reception & foyer |
 | `gym.jpg` | Facilities — "small gym" |
-| `upstairs kitchen.jpg` | Facilities — "2 guest kitchens" |
-| `20230428_184321.jpg` (rotated) | Gallery — corridor / room numbering |
+| `shared-guest-kitchen.jpg` | Facilities — "2 guest kitchens" |
+| `accommodation-hallway-orange-trim.jpg` (rotated) | Gallery — corridor / room numbering |
 
 ### History / resilience (About / Our Story)
 | File | Best use |
 | --- | --- |
-| `53-1955-atlantic-hotel-cnr-monkland-and-mary-streets.webp` ★ | History hero — 1955 Mary St flood, boat, Royal visible |
-| `1000006744.jpg` ★ | History — 1800s Royal Hotel (S. Ryan, Billiards) |
-| `1000006748.jpg` | History — early flood, period building |
-| `1000006754.jpg` / `1000006755.jpg` | History — modern flood, Art Deco Royal submerged |
-| `2cc85b80734cc7f4467c908654173d47.jfif` | History — retro colour flood at the Royal |
-| `2022.jpg` / `13  YEARS.jpg` / `FLOOD TEN YEARS AGO.jpg` | History — resilience montage |
-| `1000006751.jpg` | History reserve (low clarity) |
-| `5bf2004f8b7d703bcc1925080d43c1b5.jfif` | Optional — pre-refurb interior storm damage |
+| `gympie-mary-street-flood-1955.webp` ★ | History hero — 1955 Mary St flood, boat, Royal visible |
+| `royal-hotel-early-verandah-history.jpg` ★ | History — 1800s Royal Hotel (S. Ryan, Billiards) |
+| `gympie-historic-flood-storefront.jpg` | History — early flood, period building |
+| `royal-hotel-gympie-flood-street.jpg` / `royal-hotel-gympie-floodwaters.jpg` | History — modern flood, Art Deco Royal submerged |
+| `royal-hotel-historic-flood.jfif` | History — retro colour flood at the Royal |
+| `gympie-2022-flood-mary-street.jpg` / `gympie-flood-mary-street-road-closure.jpg` / `royal-hotel-historic-flood-verandah.jpg` | History — resilience montage |
+| `royal-hotel-historic-building-detail.jpg` | History reserve (low clarity) |
+| `venue-ceiling-renovation.jfif` | Optional — pre-refurb interior storm damage |
 
 ### Brand assets
 | File | Best use |
 | --- | --- |
-| `image001.png` ★ | Site logo (header) + source of brand palette |
-| `Long r.jpeg` | Footer / contact banner with phone |
+| `royal-hotel-logo.png` ★ | Site logo (header) + source of brand palette |
+| `royal-hotel-phone-banner.jpeg` | Footer / contact banner with phone |
 
 ### Skip / low quality
-- `fLOOD.PNG` (255px), `_hotel_royalhotelgympieqld.html_PHOTO7.jpg` (tiny) — too small.
+- `gympie-flood-rooftop-view.png` (255px), `royal-hotel-exterior-archive-photo.jpg` (tiny) — too small.
 - Stock images in `image-sources.md` — retire once real photos are wired in.
 
 ## 7. Open questions for Matt / client

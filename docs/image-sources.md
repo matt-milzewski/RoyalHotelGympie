@@ -2,7 +2,7 @@
 
 As of the May 2026 update, the live pages use **venue-owned photography** supplied by the client
 (rooms, facilities, exterior, and historical flood/heritage shots) plus the official brand logo
-`image001.png`. See `docs/client-update-plan.md` for the full per-image placement table.
+`royal-hotel-logo.png`. See `docs/client-update-plan.md` for the full per-image placement table.
 
 The stock images listed below are **no longer referenced** by the pages and can be deleted once the
 client has signed off on the real-photo selection.

@@ -496,32 +496,32 @@ body.nav-open .nav-menu {
 }
 
 .hero-home {
-  background-image: url("../img/The royal.jpg");
+  background-image: url("../img/royal-hotel-art-deco-facade.jpg");
   background-position: center 60%;
 }
 
 .hero-about {
-  background-image: url("../img/53-1955-atlantic-hotel-cnr-monkland-and-mary-streets.webp");
+  background-image: url("../img/gympie-mary-street-flood-1955.webp");
   background-position: center;
 }
 
 .hero-eat-drink {
-  background-image: url("../img/fire place.jpg");
+  background-image: url("../img/guest-lounge-fireplace.jpg");
   background-position: center;
 }
 
 .hero-accommodation {
-  background-image: url("../img/room 5.jpg");
+  background-image: url("../img/room-5-kitchenette-workspace.jpg");
   background-position: center 45%;
 }
 
 .hero-gallery {
-  background-image: url("../img/285202405.jpg");
+  background-image: url("../img/royal-hotel-mary-street-day.jpg");
   background-position: center 60%;
 }
 
 .hero-contact {
-  background-image: url("../img/entrance.jpg");
+  background-image: url("../img/red-sofa-guest-lounge-wide_today.jpg");
   background-position: center 35%;
 }
 
@@ -671,6 +671,10 @@ body.nav-open .nav-menu {
 .hero-meta-item strong {
   display: block;
   font-size: 1rem;
+}
+
+.hero-meta-item a {
+  color: inherit;
 }
 
 .meta-kicker {
@@ -1072,42 +1076,42 @@ details.surface p {
   background-image:
     linear-gradient(115deg, rgba(20, 10, 28, 0.9), rgba(20, 10, 28, 0.58) 56%, rgba(20, 10, 28, 0.26)),
     linear-gradient(180deg, rgba(20, 10, 28, 0.14), rgba(20, 10, 28, 0.74)),
-    url("../img/The royal.jpg");
+    url("../img/royal-hotel-art-deco-facade.jpg");
 }
 
 .hero.hero-about {
   background-image:
     linear-gradient(115deg, rgba(20, 10, 28, 0.92), rgba(20, 10, 28, 0.62) 56%, rgba(20, 10, 28, 0.3)),
     linear-gradient(180deg, rgba(20, 10, 28, 0.15), rgba(20, 10, 28, 0.76)),
-    url("../img/53-1955-atlantic-hotel-cnr-monkland-and-mary-streets.webp");
+    url("../img/gympie-mary-street-flood-1955.webp");
 }
 
 .hero.hero-eat-drink {
   background-image:
     linear-gradient(115deg, rgba(20, 10, 28, 0.9), rgba(20, 10, 28, 0.58) 56%, rgba(20, 10, 28, 0.28)),
     linear-gradient(180deg, rgba(20, 10, 28, 0.15), rgba(20, 10, 28, 0.76)),
-    url("../img/fire place.jpg");
+    url("../img/guest-lounge-fireplace.jpg");
 }
 
 .hero.hero-accommodation {
   background-image:
     linear-gradient(115deg, rgba(20, 10, 28, 0.9), rgba(20, 10, 28, 0.58) 56%, rgba(20, 10, 28, 0.28)),
     linear-gradient(180deg, rgba(20, 10, 28, 0.15), rgba(20, 10, 28, 0.76)),
-    url("../img/room 5.jpg");
+    url("../img/room-5-kitchenette-workspace.jpg");
 }
 
 .hero.hero-gallery {
   background-image:
     linear-gradient(115deg, rgba(20, 10, 28, 0.9), rgba(20, 10, 28, 0.58) 56%, rgba(20, 10, 28, 0.28)),
     linear-gradient(180deg, rgba(20, 10, 28, 0.15), rgba(20, 10, 28, 0.76)),
-    url("../img/285202405.jpg");
+    url("../img/royal-hotel-mary-street-day.jpg");
 }
 
 .hero.hero-contact {
   background-image:
     linear-gradient(115deg, rgba(20, 10, 28, 0.92), rgba(20, 10, 28, 0.6) 56%, rgba(20, 10, 28, 0.3)),
     linear-gradient(180deg, rgba(20, 10, 28, 0.15), rgba(20, 10, 28, 0.76)),
-    url("../img/entrance.jpg");
+    url("../img/red-sofa-guest-lounge-wide_today.jpg");
 }
 
 .hero .eyebrow,
