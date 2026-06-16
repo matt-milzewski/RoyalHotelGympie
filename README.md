@@ -6,14 +6,14 @@
 ## Current public details
 - Booking model: direct only — by phone or email (not Booking.com)
 - Address: `188-190 Mary Street, Gympie QLD 4570`
-- Phone and email: `0431 295 126` (mobile), `admin@royalgympie.com.au`
+- Phone and email: `0431 295 126` (mobile), `info@royalgympie.com.au`
 - Managers: Gary & Joanne Churchill (on-site)
 - Rates: king single $130/night, double/queen $150/night, $600 flat weekly (7 nights, serviced weekly)
 - Brand palette: royal purple `#3f1954`, gold `#f8cc23`, rich black `#130c0e` (logo: `assets/img/royal-hotel-logo.png`)
 - Social links: not configured
 
 ## Still to confirm / replace
-- Email address: confirm `admin@royalgympie.com.au` is current
+- Email address: confirm `info@royalgympie.com.au` is current
 - Reception / check-in hours: none published yet (Contact says "call ahead")
 - Site URL in metadata and `sitemap.xml`
 - Retire remaining stock images once happy with real photo selection (see `docs/image-sources.md`)

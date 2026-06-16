@@ -25,7 +25,7 @@ functions as supporting stories. This is the single most important change.
 - Phone: **0431 295 126** (mobile — matches the new street sign & entrance signage).
   - Current site uses landline `07 5483 7857`. Confirm whether to keep landline at all.
 - Email: client did not supply one in these emails. Current site uses
-  `admin@royalgympie.com.au` — keep unless told otherwise.
+  `info@royalgympie.com.au` — keep unless told otherwise.
 - New street sign is up and includes the website address.
 
 ### Rooms & rates
@@ -193,6 +193,6 @@ Legend: ★ = strongest pick. Several photos are phone shots rotated 90° — no
 1. **Brand palette**: re-theme to official purple/gold/black, or keep current warm theme + add logo?
 2. **Nav**: rename "Eat & Drink" → "Functions"/"Facilities"? Add a dedicated "Our Story" history page?
 3. **Phone**: use mobile 0431 295 126 only, or keep the landline too?
-4. **Email address**: confirm `admin@royalgympie.com.au` is still correct.
+4. **Email address**: confirm `info@royalgympie.com.au` is still correct.
 5. **Reception / check-in hours** to publish on Contact (client gave none).
 6. Timeline estimate the client asked for (they want it for printing pamphlets/cards).
