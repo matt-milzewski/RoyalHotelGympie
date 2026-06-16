@@ -511,7 +511,7 @@ body.nav-open .nav-menu {
 }
 
 .hero-accommodation {
-  background-image: url("../img/room-20-kitchenette-workspace.jpg");
+  background-image: url("../img/room-5-kitchenette-workspace.jpg");
   background-position: center 45%;
 }
 
@@ -777,22 +777,6 @@ body.nav-open .nav-menu {
 
 .room-shot {
   object-position: center 42%;
-}
-
-.room-preview-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem;
-}
-
-.room-preview-grid .media-frame {
-  border-radius: 18px;
-}
-
-.room-preview-grid img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
 }
 
 .stats-grid {
@@ -1113,7 +1097,7 @@ details.surface p {
   background-image:
     linear-gradient(115deg, rgba(20, 10, 28, 0.9), rgba(20, 10, 28, 0.58) 56%, rgba(20, 10, 28, 0.28)),
     linear-gradient(180deg, rgba(20, 10, 28, 0.15), rgba(20, 10, 28, 0.76)),
-    url("../img/room-20-kitchenette-workspace.jpg");
+    url("../img/room-5-kitchenette-workspace.jpg");
 }
 
 .hero.hero-gallery {
