@@ -148,7 +148,7 @@ The public HTML now adds a manual query-string version to the shared CSS and JS 
 Start with the target page, then search for repeated venue details with:
 
 ```bash
-rg -n "PLACEHOLDER|INSERT STREET ADDRESS|0000 0000|hello@royalhotelgympie.com.au" .
+rg -n "PLACEHOLDER|INSERT STREET ADDRESS|0000 0000|hello@royalgympie.com.au" .
 ```
 
 ### For style edits
