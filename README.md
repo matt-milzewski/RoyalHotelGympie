@@ -4,7 +4,7 @@
 - Run `python3 -m http.server 4173` from the repo root and open `http://127.0.0.1:4173/`.
 
 ## Current public details
-- Booking model: direct only — by phone or email (not Booking.com)
+- Booking model: accommodation reservations through `https://www.booking.com/hotel/au/royal-gympie-gympie.html`; phone and email remain available for function enquiries and special requests
 - Address: `188-190 Mary Street, Gympie QLD 4570`
 - Phone and email: `0431 295 126` (mobile), `info@royalgympie.com.au`
 - Canonical site URL: `https://www.royalgympie.com.au/`

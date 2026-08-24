@@ -9,7 +9,7 @@ The current site is built as a **daily pub/bistro/bar destination** that books v
 The client's emails make clear the business is now something different:
 
 - It is primarily an **accommodation** business (modern, refurbished rooms).
-- **Booking.com is OFF** — they cannot get listed. Bookings are **by phone or email only**.
+- **Booking.com is live** — accommodation reservations use the Royal Hotel's verified Booking.com listing. Phone and email remain available for function enquiries and special requests.
 - The **bar and entertainment areas are no longer open to the public daily** — available for
   **private bookings by appointment** (functions, conferences, gatherings).
 - It has a **rich 140+ year heritage** story the client wants told.
@@ -82,13 +82,12 @@ text logo. The real brand is **purple + gold + black**. Options:
 
 ## 4. Global changes (every HTML page)
 
-- Remove **all Booking.com** links/CTAs. Replace "Book Accommodation" →
-  **"Call to Book" (tel:)** + email. New CTA target: `tel:+61431295126`.
+- Use **Booking.com** for all accommodation booking CTAs. Keep phone and email links for function enquiries and special requests. Booking CTA target: `https://www.booking.com/hotel/au/royal-gympie-gympie.html`.
 - Phone → **0431 295 126** (`tel:+61431295126`), update footer, contact, schema.
 - Address → **188–190 Mary Street, Gympie QLD 4570** (header schema + footers + contact + map).
 - Remove "Open daily 10am to late" framing (the venue is not a daily public bar). Replace with
   **reception/check-in** guidance + "functions by appointment".
-- JSON-LD: drop the Booking.com `ReserveAction`; add real rooms/amenities where useful;
+- JSON-LD: use the verified Booking.com URL for any future accommodation `ReserveAction`; add real rooms/amenities where useful;
   fix `streetAddress` and `telephone`.
 - Nav: see restructure below.
 - Swap stock images for real venue photos site-wide.
@@ -97,16 +96,16 @@ text logo. The real brand is **purple + gold + black**. Options:
 
 ### Home (`index.html`)
 - Hero: real exterior (`royal-hotel-art-deco-facade.jpg`). Headline shifts to **stay / heritage / central Gympie**.
-- Hero meta chips → "Call to book 0431 295 126", "Central Gympie", "Heritage Art Deco hotel".
+- Hero meta chips → "Book online", "Central Gympie", "Heritage Art Deco hotel".
 - Feature cards → Accommodation (primary), Facilities, Our Story (history), Functions, Contact.
 - Replace bistro/bar split sections with **Accommodation** + **Facilities** highlights.
-- Replace Booking.com CTA band with **Call/Email to book** band + rate snapshot.
+- Use a **Booking.com accommodation CTA** with phone/email available for special requests.
 
 ### Accommodation (`accommodation/index.html`) — now the flagship page
 - Hero: `room-5-kitchenette-workspace.jpg` or `room-5-bedroom.jpg`.
 - Room types + **rates table** ($130 king single, $150 double/queen, $600/week serviced weekly).
 - In-room features list (aircon, kitchenette, ensuite, WiFi, smart TV, continental breakfast).
-- "How to book" = phone/email (no Booking.com). FAQ rewritten accordingly.
+- "How to book" = Booking.com, with phone/email for special requests. FAQ rewritten accordingly.
 - Photos: `room-5-kitchenette-workspace.jpg`, `room-5-bedroom.jpg`, `room-11-bedroom.jpg`, `room-3-kitchenette.jpg`, `room-11-kitchenette-bedroom.jpg`, and `single-room-kitchenette-workspace.jpg`.
 
 ### About (`about/index.html`)
