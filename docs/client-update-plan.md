@@ -32,7 +32,7 @@ functions as supporting stories. This is the single most important change.
 - Room types: **king single, double, queen**.
 - Nightly: **$130 king single**, **$150 double/queen**.
 - Overnight range quoted elsewhere as **$110–$150 per room**.
-- Weekly: **$600 flat weekly rate (7 days)**; weekly stays **serviced once a week**.
+- Weekly: **$600-$750 weekly rate (7 days)**; weekly stays **serviced once a week**.
 - Discounted rates for weekly stays.
 
 ### In-room features (all rooms)
